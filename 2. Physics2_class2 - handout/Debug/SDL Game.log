@@ -1,0 +1,3 @@
+﻿  ModulePhysics.cpp
+c:\users\gerardrv.ttc\documents\github\physics_hw\2. physics2_class2 - handout\modulephysics.cpp(35): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  SDL Game.vcxproj -> C:\Users\gerardrv.TTC\Documents\GitHub\Physics_HW\2. Physics2_class2 - handout\Debug\2D Physics - class 2.exe

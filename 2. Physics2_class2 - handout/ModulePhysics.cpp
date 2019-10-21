@@ -62,94 +62,7 @@ update_status ModulePhysics::PreUpdate()
 // 
 update_status ModulePhysics::PostUpdate()
 {
-	// On space bar press, create a circle on mouse position
-	if(App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
-	{
-		CreateCircle(App->input->GetMouseX(), App->input->GetMouseY(), 25, true);
-	}
-
-	if(App->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
-	{
-		// TODO 1: When pressing 2, create a box on the mouse position
-		CreateRectangle(App->input->GetMouseX(), App->input->GetMouseY(), 50, 50, true);
-		// TODO 2: To have the box behave normally, set fixture's density to 1.0f
-	}
-
-	if(App->input->GetKey(SDL_SCANCODE_3) == KEY_DOWN)
-	{
-		// TODO 3: Create a chain shape using those vertices
-		// remember to convert them from pixels to meters!
-		
-		b2Vec2 vec[44];
-
-		int points[88] = {
-			240, 363,
-			225, 343,
-			214, 324,
-			213, 315,
-			203, 299,
-			200, 283,
-			191, 259,
-			188, 230,
-			190, 182,
-			196, 146,
-			213, 116,
-			509, 107,
-			525, 135,
-			537, 160,
-			540, 183,
-			536, 206,
-			530, 218,
-			523, 237,
-			516, 254,
-			519, 267,
-			522, 282,
-			521, 290,
-			517, 303,
-			516, 316,
-			518, 326,
-			508, 342,
-			507, 351,
-			503, 367,
-			503, 389,
-			500, 409,
-			485, 433,
-			469, 450,
-			451, 460,
-			423, 483,
-			410, 494,
-			382, 503,
-			350, 501,
-			313, 482,
-			303, 475,
-			266, 444,
-			256, 427,
-			247, 409,
-			243, 377,
-			246, 401
-		};
-		
-		for (int i = 0; i < 44; i++)
-		{
-			vec[i].Set(PIXEL_TO_METERS(points[i*2]), PIXEL_TO_METERS(points[i*2+1]));
-		}
-
-		b2ChainShape chain;		
-		b2BodyDef body;
-		body.type = b2_dynamicBody;
-		body.position.Set(PIXEL_TO_METERS(App->input->GetMouseX()), PIXEL_TO_METERS(App->input->GetMouseY()));
-
-		b2Body* b = world->CreateBody(&body);
-
-		b2FixtureDef fixture;
-		fixture.shape = &chain;
-		fixture.density = 1.0f;
-
-		chain.CreateLoop(vec, 44);
-
-		b->CreateFixture(&fixture);
-	}
-
+	
 	if(App->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)
 		debug = !debug;
 
@@ -243,7 +156,7 @@ bool ModulePhysics::CleanUp()
 	return true;
 }
 
-void ModulePhysics::CreateCircle(int x, int y, int radium, bool dynamic)
+PhysBody* ModulePhysics::CreateCircle(int x, int y, int radium, bool dynamic)
 {
 
 	b2BodyDef body;
@@ -262,9 +175,11 @@ void ModulePhysics::CreateCircle(int x, int y, int radium, bool dynamic)
 
 	b->CreateFixture(&fixture);
 
+	return new PhysBody(b);
+
 }
 
-void ModulePhysics::CreateRectangle(int x, int y, int width, int height, bool dynamic)
+PhysBody* ModulePhysics::CreateRectangle(int x, int y, int width, int height, bool dynamic)
 {
 	b2BodyDef body;
 	if (dynamic)body.type = b2_dynamicBody;
@@ -280,9 +195,94 @@ void ModulePhysics::CreateRectangle(int x, int y, int width, int height, bool dy
 	fixture.density = 1.0f;
 
 	b->CreateFixture(&fixture);
+
+	return new PhysBody(b);
 }
 
-void ModulePhysics::CreateChain(int x, int y, int* points, int size, bool dynamic, bool limitChain, bool loop, bool isSensor) {
+void ModulePhysics::CreateChain() {
 
+	b2Vec2 vec[44];
+
+	int points[88] = {
+		240, 363,
+		225, 343,
+		214, 324,
+		213, 315,
+		203, 299,
+		200, 283,
+		191, 259,
+		188, 230,
+		190, 182,
+		196, 146,
+		213, 116,
+		509, 107,
+		525, 135,
+		537, 160,
+		540, 183,
+		536, 206,
+		530, 218,
+		523, 237,
+		516, 254,
+		519, 267,
+		522, 282,
+		521, 290,
+		517, 303,
+		516, 316,
+		518, 326,
+		508, 342,
+		507, 351,
+		503, 367,
+		503, 389,
+		500, 409,
+		485, 433,
+		469, 450,
+		451, 460,
+		423, 483,
+		410, 494,
+		382, 503,
+		350, 501,
+		313, 482,
+		303, 475,
+		266, 444,
+		256, 427,
+		247, 409,
+		243, 377,
+		246, 401
+	};
+
+
+	for (int i = 0; i < 44; i++)
+	{
+		vec[i].Set(PIXEL_TO_METERS(points[i * 2]), PIXEL_TO_METERS(points[i * 2 + 1]));
+	}
+
+	b2ChainShape chain;	chain.CreateLoop(vec, 44);
+	b2BodyDef body;
+	body.type = b2_dynamicBody;
+	body.position.Set(PIXEL_TO_METERS(App->input->GetMouseX()), PIXEL_TO_METERS(App->input->GetMouseY()));
+
+	b2Body* b = world->CreateBody(&body);
+
+	b2FixtureDef fixture;
+	fixture.shape = &chain;
+	fixture.density = 1.0f;
+
+	b->CreateFixture(&fixture);
+}
+
+void PhysBody::GetPosition(int& x, int& y) const
+{
+	b2Vec2 pos;
+	pos = body_pointer->GetPosition();
+
+	x = METERS_TO_PIXELS(pos.x) - (width);
+	y = METERS_TO_PIXELS(pos.y) - (height);
+}
+
+void PhysBody::GetRotation(float& angl)
+{
+
+	angl = body_pointer->GetAngle() * 57.2957f;
+	LOG("Circle angle %f", angl);
 
 }

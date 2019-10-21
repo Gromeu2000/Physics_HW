@@ -1,6 +1,7 @@
 #pragma once
 #include "Module.h"
 #include "Globals.h"
+#include "p2DynArray.h"
 
 #define GRAVITY_X 0.0f
 #define GRAVITY_Y -7.0f
@@ -19,6 +20,17 @@ class b2Body;
 // then write the implementation in the .cpp
 // Then make your circle creation function to return a pointer to that class
 
+class PhysBody
+{
+public:
+	PhysBody(b2Body* body) :body_pointer(body) {}
+	void GetPosition(int& x, int& y) const;
+	void GetRotation(float& angl);
+public:
+	b2Body* body_pointer;
+	int width, height;
+
+};
 
 class ModulePhysics : public Module
 {
@@ -32,9 +44,12 @@ public:
 	bool CleanUp();
 
 	// TODO 4: Move body creation to 3 functions to create circles, rectangles and chains
-	void CreateCircle(int x, int y, int radius,bool dynamic);
-	void CreateRectangle(int x, int y, int width, int height, bool dynamic);
-	void CreateChain(int x, int y, int* points, int size, bool dynamic, bool limitChain, bool loop, bool isSensor);
+	PhysBody* CreateCircle(int x, int y, int radius,bool dynamic);
+	PhysBody* CreateRectangle(int x, int y, int width, int height, bool dynamic);
+	void CreateChain();
+
+	p2DynArray<PhysBody*> physbody_circle;
+	p2DynArray<PhysBody*> physbody_rectangle;
 
 
 private:

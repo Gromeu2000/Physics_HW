@@ -28,7 +28,9 @@ bool ModulePhysics::Start()
 	LOG("Creating Physics 2D environment");
 
 	world = new b2World(b2Vec2(GRAVITY_X, -GRAVITY_Y));
+	
 	// TODO 3: You need to make ModulePhysics class a contact listener
+	world->SetContactListener(this);
 
 	// big static circle as "ground" in the middle of the screen
 	int x = SCREEN_WIDTH / 2;
@@ -313,6 +315,8 @@ void ModulePhysics::BeginContact(b2Contact* contact)
 	PhysBody* A = (PhysBody*)contact->GetFixtureA()->GetBody()->GetUserData();
 	PhysBody* B = (PhysBody*)contact->GetFixtureB()->GetBody()->GetUserData();
 
+	// TODO 7: Call the listeners that are not NULL
+
 	if (A && A->listen != nullptr)
 	{
 		A->listen->OnCollision(A, B);
@@ -323,7 +327,6 @@ void ModulePhysics::BeginContact(b2Contact* contact)
 		B->listen->OnCollision(B, A);
 	}
 
-
+	LOG("COLLISION");
 }
 
-// TODO 7: Call the listeners that are not NULL

@@ -1,30 +1,6 @@
-﻿  Application.cpp
-  ModulePhysics.cpp
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(35): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(112): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(113): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(129): warning C4018: '<': signed/unsigned mismatch
-  ModuleSceneIntro.cpp
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulesceneintro.cpp(158): warning C4244: 'argument': conversion from 'TYPE' to 'TYPE', possible loss of data
-          with
-          [
-              TYPE=int
-          ]
-          and
-          [
-              TYPE=float
-          ]
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulesceneintro.cpp(160): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulesceneintro.cpp(162): warning C4244: 'argument': conversion from 'TYPE' to 'int', possible loss of data
-          with
-          [
-              TYPE=float
-          ]
-c:\users\gerardrv\documents\github\physics_hw\3. physics2_class3 - handout\modulesceneintro.cpp(165): warning C4244: 'argument': conversion from 'TYPE' to 'int', possible loss of data
-          with
-          [
-              TYPE=float
-          ]
-  Generating Code...
-ModuleSceneIntro.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall ModuleSceneIntro::OnCollision(class PhysBody *,class PhysBody *)" (?OnCollision@ModuleSceneIntro@@UAEXPAVPhysBody@@0@Z)
-C:\Users\gerardrv\Documents\GitHub\Physics_HW\3. Physics2_class3 - handout\Debug\2D Physics - class 3.exe : fatal error LNK1120: 1 unresolved externals
+﻿  ModulePhysics.cpp
+d:\grome\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(37): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(129): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(130): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\3. physics2_class3 - handout\modulephysics.cpp(146): warning C4018: '<': no coinciden signed/unsigned
+  SDL Game.vcxproj -> D:\grome\Documents\GitHub\Physics_HW\3. Physics2_class3 - handout\Debug\2D Physics - class 3.exe

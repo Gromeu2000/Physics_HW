@@ -1,7 +1,7 @@
 ﻿  Application.cpp
   ModulePhysics.cpp
-d:\grome\documents\github\physics_hw\2. physics2_class2 - handout\modulephysics.cpp(35): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\gerardrv\documents\github\physics_hw\2. physics2_class2 - handout\modulephysics.cpp(35): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   ModuleSceneIntro.cpp
-d:\grome\documents\github\physics_hw\2. physics2_class2 - handout\modulesceneintro.cpp(67): warning C4018: '<': no coinciden signed/unsigned
-  Generando código...
-  SDL Game.vcxproj -> D:\grome\Documents\GitHub\Physics_HW\2. Physics2_class2 - handout\Debug\2D Physics - class 2.exe
+c:\users\gerardrv\documents\github\physics_hw\2. physics2_class2 - handout\modulesceneintro.cpp(67): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\gerardrv\Documents\GitHub\Physics_HW\2. Physics2_class2 - handout\Debug\2D Physics - class 2.exe

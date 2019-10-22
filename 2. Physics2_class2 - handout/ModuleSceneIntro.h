@@ -17,6 +17,7 @@ public:
 
 public:
 
+	p2List<PhysBody> bodyList;
 	SDL_Texture* circle;
 	SDL_Texture* box;
 	SDL_Texture* rick;

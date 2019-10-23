@@ -1,0 +1,9 @@
+﻿  ModulePhysics.cpp
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(40): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(121): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(122): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(165): warning C4018: '<': no coinciden signed/unsigned
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(397): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(398): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\gerardrv\documents\github\physics_hw\4. physics2_class4 - handout\modulephysics.cpp(404): warning C4244: 'return': conversión de 'float32' a 'int'; posible pérdida de datos
+  SDL Game.vcxproj -> C:\Users\gerardrv\Documents\GitHub\Physics_HW\4. Physics2_class4 - handout\Debug\2D Physics - class 4.exe

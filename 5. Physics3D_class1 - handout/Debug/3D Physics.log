@@ -1,2 +1,29 @@
-﻿  ModuleCamera3D.cpp
-  3D Physics.vcxproj -> C:\Users\gerardrv\Documents\GitHub\Physics_HW\5. Physics3D_class1 - handout\Debug\3D Physics - class1 Handout.exe
+﻿  Application.cpp
+  Color.cpp
+  glmath.cpp
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(43): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(53): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(72): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(87): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(103): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(600): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(618): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(758): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\glmath.cpp(778): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  Light.cpp
+  log.cpp
+  Main.cpp
+  ModuleAudio.cpp
+  ModuleCamera3D.cpp
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\modulecamera3d.cpp(90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\grome\documents\github\physics_hw\5. physics3d_class1 - handout\modulecamera3d.cpp(91): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  ModuleInput.cpp
+  ModuleRenderer3D.cpp
+  ModuleSceneIntro.cpp
+  ModuleWindow.cpp
+  Primitive.cpp
+  Timer.cpp
+  Generando código...
+  3D Physics.vcxproj -> D:\grome\Documents\GitHub\Physics_HW\5. Physics3D_class1 - handout\Debug\3D Physics - class1 Handout.exe

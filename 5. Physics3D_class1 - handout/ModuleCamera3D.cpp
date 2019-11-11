@@ -86,11 +86,10 @@ update_status ModuleCamera3D::Update()
 
 		// TODO (Homework): Rotate the camera with the mouse
 
-		Move({ float(dx), 0, 0 });
-		Move({ 0, 0,float(dy) });
-
-		LookAt({ 0, 0, 0 });
-
+		vec3 Forward = -Z;
+		Forward = rotate(Forward, dx, Y);
+		Forward = rotate(Forward, dy, X);
+		LookAt(Position + Forward);
 	}
 
 	// Recalculate matrix -------------
